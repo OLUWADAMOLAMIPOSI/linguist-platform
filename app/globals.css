@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-ivory font-sans text-ink antialiased;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-serif text-forest-dark;
+  }
+  a {
+    @apply transition-colors;
+  }
+  ::selection {
+    background: #cfdcd2;
+  }
+  :focus-visible {
+    outline: 2px solid rgba(47, 74, 60, 0.45);
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded border px-4 py-2 text-sm font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-60;
+  }
+  .btn-primary {
+    @apply border-forest bg-forest text-ivory hover:bg-forest-dark;
+  }
+  .btn-outline {
+    @apply border-line bg-paper text-forest-dark hover:bg-sand/60;
+  }
+  .btn-danger {
+    @apply border-danger bg-danger text-ivory hover:opacity-90;
+  }
+  .btn-sm {
+    @apply px-3 py-1.5 text-xs;
+  }
+  .input {
+    @apply w-full rounded border border-line bg-paper px-3 py-2 text-sm text-ink placeholder:text-muted/70 focus:border-forest focus:outline-none focus:ring-2 focus:ring-forest/20;
+  }
+  .label {
+    @apply mb-1 block text-sm font-medium text-forest-dark;
+  }
+  .help {
+    @apply mt-1 text-xs text-muted;
+  }
+  .field-error {
+    @apply mt-1 text-xs text-danger;
+  }
+  .card {
+    @apply rounded border border-line bg-paper shadow-soft;
+  }
+  .badge {
+    @apply inline-flex items-center rounded-sm bg-sand px-2 py-0.5 text-xs font-medium text-forest-dark;
+  }
+  .badge-green {
+    @apply inline-flex items-center rounded-sm bg-forest-soft px-2 py-0.5 text-xs font-medium text-forest-dark;
+  }
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.14em] text-forest-light;
+  }
+  .link {
+    @apply text-forest underline decoration-forest/30 underline-offset-2 hover:decoration-forest;
+  }
+  .table-base {
+    @apply w-full border-collapse text-left text-sm;
+  }
+  .table-base th {
+    @apply border-b border-line bg-sand/50 px-3 py-2 text-xs font-semibold uppercase tracking-wide text-forest-dark;
+  }
+  .table-base td {
+    @apply border-b border-line/70 px-3 py-2 align-top;
+  }
+
+  .prose-academic {
+    @apply text-[1.02rem] leading-8 text-ink;
+  }
+  .prose-academic > * + * {
+    @apply mt-4;
+  }
+  .prose-academic h2 {
+    @apply mt-10 text-2xl;
+  }
+  .prose-academic h3 {
+    @apply mt-8 text-xl;
+  }
+  .prose-academic ul {
+    @apply list-disc pl-6;
+  }
+  .prose-academic ol {
+    @apply list-decimal pl-6;
+  }
+  .prose-academic blockquote {
+    @apply border-l-4 border-sand-dark pl-4 italic text-muted;
+  }
+  .prose-academic a {
+    @apply text-forest underline decoration-forest/30 underline-offset-2 hover:decoration-forest;
+  }
+  .prose-academic code {
+    @apply rounded bg-sand px-1 py-0.5 text-sm;
+  }
+  .prose-academic img {
+    @apply h-auto max-w-full;
+  }
+
+  .gloss {
+    @apply my-4 flex flex-wrap items-start gap-x-5 gap-y-2 font-ipa text-[0.98rem];
+  }
+  .gloss-word {
+    @apply flex flex-col;
+  }
+  .gloss-sc {
+    font-variant-caps: all-small-caps;
+    letter-spacing: 0.02em;
+  }
+
+  .editor-surface .ProseMirror {
+    @apply min-h-[180px] px-3 py-2 text-sm leading-7 focus:outline-none;
+  }
+  .editor-surface .ProseMirror > * + * {
+    @apply mt-3;
+  }
+  .editor-surface .ProseMirror h2 {
+    @apply text-xl;
+  }
+  .editor-surface .ProseMirror h3 {
+    @apply text-lg;
+  }
+  .editor-surface .ProseMirror ul {
+    @apply list-disc pl-6;
+  }
+  .editor-surface .ProseMirror ol {
+    @apply list-decimal pl-6;
+  }
+  .editor-surface .ProseMirror blockquote {
+    @apply border-l-4 border-sand-dark pl-3 italic text-muted;
+  }
+  .editor-surface .ProseMirror a {
+    @apply text-forest underline;
+  }
+}
